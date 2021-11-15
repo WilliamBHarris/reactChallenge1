@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
+import View from './components/View';
+import Inputs from './components/Inputs';
 
 function App() {
+  const [name, setName] = useState('');
+  const [age, setAge] = useState('');
+  const [hobbies, setHobbies] = useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Inputs setAge={setAge} setHobbies={setHobbies} setName={setName} />
+      <View   name={name} age={age} hobbies={hobbies} />
     </div>
   );
 }
